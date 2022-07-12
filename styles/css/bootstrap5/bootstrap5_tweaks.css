@@ -1,0 +1,53 @@
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+label {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+ul.sidelist {
+  list-style-type: none;
+  margin-left: -30px;
+  margin-top:20px;
+}
+
+.sidelist li a {
+  color:#212529;
+}
+
+.carousel {
+    background-color: #cecece;
+}
+
+
+#image-section {
+    border: 1px solid rgba(0,0,0,.10196);
+    border-radius: 3px;
+    background: #f9f5eb;
+}
+
+.imgbox {
+    background: #fff;
+    border: 1px solid #8a8a8a;
+    box-shadow: 0 0 10px #ddd inset;
+    border-radius: 5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:20px;
+    display:inline-block;
+    padding:8px;
+}
+
+.btn-sm {
+    padding: 0.1rem 0.1rem;
+    font-size: .600rem;
+}
+
+.small, small {
+    font-size: .675em;
+}

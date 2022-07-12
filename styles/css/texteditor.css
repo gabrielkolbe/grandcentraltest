@@ -1,0 +1,37 @@
+#buttonsToolbar button:last-child {
+  margin: 0;
+}
+
+#buttonsToolbar button {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 0 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#buttonsToolbar {
+  width: fit-content;
+}
+
+#textEditor {
+  width: 100%;
+  height: 250px;
+  margin-top: 5px;
+  padding: 5px;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 3px;
+  outline: none;
+  background-color: white;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .1);
+}
+
+#buttonsToolbar button.active {
+  background-color: rgb(214, 214, 214)
+}
+
+#textEditor p {
+  color: black;
+}

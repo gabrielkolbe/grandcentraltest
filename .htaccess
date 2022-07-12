@@ -1,0 +1,36 @@
+Options +FollowSymLinks -indexes
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+RewriteBase /
+##RewriteCond %{HTTP:SSL} !=1 [NC]
+##RewriteCond %{HTTPS} off
+##RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+
+## If the request is for a valid directory
+## If the request is for a valid file
+## If the request is for a valid link
+## don't do anything
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^ - [L]
+
+RewriteCond %{HTTP_USER_AGENT} ^HTTrack [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZip [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.*$ no_download.html [L]
+
+RewriteRule ^([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([^/]+)/([^/]+)/?$ ?controller=$1&action=$2&slug=$3&slur=$4 [L,QSA]
+
+RewriteRule ^([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([^/]+)/?$ ?controller=$1&action=$2&slug=$3 [L,QSA]
+
+RewriteRule ^([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/?$ ?controller=$1&action=$2 [L,QSA]
+
+RewriteRule ^([0-9a-zA-Z_-]+)/?$ ?controller=$1 [L,QSA]
+
+
+</IfModule>
